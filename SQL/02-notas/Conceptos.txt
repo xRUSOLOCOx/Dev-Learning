@@ -1,0 +1,15 @@
+### CONCEPTOS GENERALES DE BASE DE DATOS ###
+
+
+SQL: Structure Query Language // Lenguaje de consulta estructurado.
+DBMS: Database Management System // Sistema de gestión de bases de datos.
+RDBMS: Relational Database Management System // Sistema de gestión de bases de datos relacional.
+
+
+Base de datos: Recopilación organizada y interelacionada de datos.
+
+-Entidad: Objeto o concepto del mundo real sobre el que se almacena información.
+-Tabla: Conjunto de datos organizados en filas y columnas dentro de una base de datos.
+-Atributo: Característica o propiedad de una entidad; corresponde a una columna en una tabla.
+-Registro: Conjunto de valores de atributos que representan una instancia de una entidad; corresponde a una fila en una tabla.
+
