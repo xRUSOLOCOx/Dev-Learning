@@ -9,6 +9,8 @@
 
 WELCOME_USER_SIGNUP =  """
 
+---------------------------------------------------------------------------------------------------------------------------
+
     BIENVENIDO USUARIO — FORMULARIO DE REGISTRO E INSTRUCCIONES:
 
     Reglas de validación (por favor úsalas al completar los campos):
@@ -28,9 +30,13 @@ WELCOME_USER_SIGNUP =  """
 
         Completa cada campo siguiendo estas reglas para que la validación sea exitosa.
 
+---------------------------------------------------------------------------------------------------------------------------
+
 """
 
 WELCOME_USER = """
+
+---------------------------------------------------------------------------------------------------------------------------
 
     BIENVENIDO USUARIO — SELECCIONE UN NUMERO DE LAS OPCIONES DISPONIBLES:
 
@@ -39,11 +45,53 @@ WELCOME_USER = """
     3. registrar usuario.
     4. Salir del sistema.
 
+---------------------------------------------------------------------------------------------------------------------------
+
 """
 
-WELCOME_USER_SIGNIN = "Bienvenido, por favor ingrese sus credenciales."
+WELCOME_USER_SIGNIN = """
 
-WELCOME_ADMIN_SIGNIN = "Bienvenido Administrador, por favor ingrese sus credenciales enviada a su correo."
+---------------------------------------------------------------------------------------------------------------------------
+
+    BIENVENIDO USUARIO, Por favor ingrese sus credenciales para iniciar sesion.
 
 
+    - Nombre de usuario: 6-20 caracteres; solo letras, números y guión bajo (_); sin espacios.
+        Ejemplo: usuario_01
 
+    - Contraseña: mínimo 8 caracteres; debe incluir al menos una letra MAYÚSCULA y al menos un dígito.
+        Puede contener símbolos comunes (@ # $ % ^ & + = ! ¿ ? . _ -).
+
+---------------------------------------------------------------------------------------------------------------------------
+
+"""
+
+USER_MENU = """
+
+---------------------------------------------------------------------------------------------------------------------------
+
+    BIENVENIDO USUARIO — SELECCIONE UN NUMERO DE LAS OPCIONES DISPONIBLES:
+
+    1. Cambiar contraseña.
+    2. Eliminar cuenta.
+    3. Cerrar sesión.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+"""
+
+
+MODIFY_PASSWORD = """
+
+---------------------------------------------------------------------------------------------------------------------------
+
+    PARA INGRESAR LA NUEVA CONTRASEÑA TENGA EN CUENTA LAS INSTRUCCIONES:
+
+    - Contraseña: mínimo 8 caracteres; debe incluir al menos una letra MAYÚSCULA y al menos un dígito.
+        Puede contener símbolos comunes (@ # $ % ^ & + = ! ¿ ? . _ -).
+        
+---------------------------------------------------------------------------------------------------------------------------        
+
+"""
+
+DELETE_USER = "!ELIMINANDO CUENTA¡"
