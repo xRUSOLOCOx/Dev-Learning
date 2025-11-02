@@ -1,0 +1,102 @@
+FLET - PROPIEDADES BÁSICAS DE COMPONENTES
+=========================================
+
+====================
+COMPONENTE: Page (ventana principal)
+====================
+• title: título de la ventana.
+• bgcolor: color de fondo.
+• padding: espacio interior (int o tuple).
+• spacing: espacio entre elementos agregados al page.controls.
+• horizontal_alignment: alineación horizontal de los controles (ft.MainAxisAlignment).
+• vertical_alignment: alineación vertical de los controles (ft.CrossAxisAlignment).
+• window_width: ancho de la ventana.
+• window_height: alto de la ventana.
+• window_resizable: permitir o no redimensionar la ventana (True/False).
+• theme_mode: modo de tema (ft.ThemeMode.LIGHT o DARK).
+
+====================
+COMPONENTE: Text
+====================
+• value: texto a mostrar.
+• size: tamaño de fuente (número).
+• color: color del texto.
+• weight: grosor del texto (ft.FontWeight.BOLD, NORMAL, etc.).
+• italic: texto en cursiva (True/False).
+• text_align: alineación del texto (ft.TextAlign.LEFT, CENTER, RIGHT, JUSTIFY).
+• selectable: permite seleccionar texto (True/False).
+
+====================
+COMPONENTE: Container
+====================
+• content: elemento o control dentro del contenedor.
+• bgcolor: color de fondo.
+• padding: espacio interno (int o tuple).
+• margin: margen exterior (int o tuple).
+• border_radius: esquinas redondeadas (int o tuple).
+• width: ancho del contenedor.
+• height: alto del contenedor.
+• alignment: alineación del contenido (ft.alignment.center, top_left, etc.).
+• border: borde (ft.border.all(), ft.border.only(), etc.).
+• ink: efecto visual al hacer clic (ft.Ink).
+
+====================
+COMPONENTE: Image
+====================
+• src: ruta o URL de la imagen.
+• width: ancho de la imagen.
+• height: alto de la imagen.
+• fit: modo de ajuste (ft.ImageFit.COVER, CONTAIN, FILL, etc.).
+• repeat: repetición de la imagen (ft.ImageRepeat.NO_REPEAT, REPEAT_X, etc.).
+• border_radius: esquinas redondeadas.
+• opacity: opacidad (0.0 a 1.0).
+
+====================
+COMPONENTE: Row
+====================
+• controls: lista de elementos hijos.
+• alignment: alineación horizontal (ft.MainAxisAlignment.START, CENTER, END, SPACE_BETWEEN, etc.).
+• vertical_alignment: alineación vertical (ft.CrossAxisAlignment.START, CENTER, END).
+• spacing: espacio entre elementos.
+• wrap: si los elementos se ajustan a la siguiente línea (True/False).
+• expand: permite que el Row ocupe todo el espacio disponible.
+
+====================
+COMPONENTE: Column
+====================
+• controls: lista de elementos hijos.
+• alignment: alineación vertical (ft.MainAxisAlignment.START, CENTER, END, SPACE_BETWEEN, etc.).
+• horizontal_alignment: alineación horizontal (ft.CrossAxisAlignment.START, CENTER, END).
+• spacing: espacio entre elementos.
+• scroll: habilitar desplazamiento (ft.ScrollMode.AUTO, ALWAYS, etc.).
+• expand: ocupa todo el espacio disponible.
+
+====================
+POSICIONES Y ALINEACIONES (útiles en Container y otros)
+====================
+• ft.alignment.top_left
+• ft.alignment.top_center
+• ft.alignment.top_right
+• ft.alignment.center_left
+• ft.alignment.center
+• ft.alignment.center_right
+• ft.alignment.bottom_left
+• ft.alignment.bottom_center
+• ft.alignment.bottom_right
+
+====================
+VALORES DE ALINEACIÓN FRECUENTES
+====================
+MainAxisAlignment:
+  - START
+  - CENTER
+  - END
+  - SPACE_BETWEEN
+  - SPACE_AROUND
+  - SPACE_EVENLY
+
+CrossAxisAlignment:
+  - START
+  - CENTER
+  - END
+  - STRETCH
