@@ -1,55 +1,46 @@
-import flet as ft
+# import flet as ft
+# import test_2   
 
-def main(page: ft.Page):
-    page.title = "Login / Registro dinámico"
-    page.window.width = 400
-    page.window.height = 400
-    page.window.center()
+# def main(page: ft.Page):
+    
 
-    # --- FUNCIONES ---
-    def mostrar_registro(e):
-        contenedor_principal.content = formulario_registro
-        page.update()
+#     def mostrar_hola_mundo(e):
 
-    def mostrar_login(e):
-        contenedor_principal.content = formulario_login
-        page.update()
+#         contentenedor_1 = test_2.componentes.contenedor_1()
+#         contenedor_principal.content = contentenedor_1
 
-    # --- FORMULARIO DE LOGIN ---
-    formulario_login = ft.Column(
-        [
-            ft.Text("Iniciar sesión", size=25, weight="bold"),
-            ft.TextField(label="Correo electrónico", width=300),
-            ft.TextField(label="Contraseña", password=True, can_reveal_password=True, width=300),
-            ft.ElevatedButton("Entrar", bgcolor=ft.Colors.BLUE, color=ft.Colors.WHITE),
-            ft.TextButton("¿No tienes cuenta? Regístrate", on_click=mostrar_registro),
-        ],
-        alignment=ft.MainAxisAlignment.CENTER,
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-    )
+#         page.update()
 
-    # --- FORMULARIO DE REGISTRO ---
-    formulario_registro = ft.Column(
-        [
-            ft.Text("Crear cuenta", size=25, weight="bold"),
-            ft.TextField(label="Nombre completo", width=300),
-            ft.TextField(label="Correo electrónico", width=300),
-            ft.TextField(label="Contraseña", password=True, can_reveal_password=True, width=300),
-            ft.TextField(label="Confirmar contraseña", password=True, can_reveal_password=True, width=300),
-            ft.ElevatedButton("Registrarme", bgcolor=ft.Colors.GREEN, color=ft.Colors.WHITE),
-            ft.TextButton("¿Ya tienes cuenta? Inicia sesión", on_click=mostrar_login),
-        ],
-        alignment=ft.MainAxisAlignment.CENTER,
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-    )
+#     def mostrar_hello_world(e):
 
-    # --- CONTENEDOR PRINCIPAL (comienza con el login) ---
-    contenedor_principal = ft.Container(
-        content=formulario_login,
-        alignment=ft.alignment.center
-    )
+#         contentenedor_2 = test_2.componentes.contenedor_2()
+#         contenedor_principal.content = contentenedor_2
 
-    # Agregar al layout
-    page.add(contenedor_principal)
+#         page.update()
 
-ft.app(target=main)
+
+#     # Componentes:
+
+
+#     contenedor_principal = ft.Container(content=ft.Text(value="Hola soy una cadena"))
+
+#     page.add(
+        
+#         ft.Column(
+
+#             [
+#                 ft.Container(content = contenedor_principal),
+#                 ft.Button(text="presioname para ver tu hola mundo",on_click=mostrar_hola_mundo),
+#                 ft.Button(text="presioname para ver tu hello world",on_click=mostrar_hello_world)
+
+#             ]
+
+#         )
+
+#         )
+
+# ft.app(main)
+
+
+# # on_click=mostrar_hola_mundo(contenedor_1)
+# # on_click=mostrar_hello_world(contenedor_2)

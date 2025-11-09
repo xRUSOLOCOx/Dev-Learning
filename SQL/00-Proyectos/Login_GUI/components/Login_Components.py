@@ -1,165 +1,136 @@
 import flet as ft
 from views import messages_repository
+from services import event_handlers
+
 
 class COMPONENTS:
 
     def content_component():
 
-        return ft.Column(
+        return ft.Container(
+
+            content=ft.Column(
 
             [
 
                 ft.Container(
 
+
                     content = ft.Column(
-
-                        [
-                            ft.Text(value="PROYECTO LOGIN_GUI",size=26,color="white",weight=ft.FontWeight.BOLD,font_family="OpenSans"),
-                            ft.Text(value=messages_repository.PROJECT_INTRODUCTION,size=16,color="white"),
-        
-                        ],
-
-                        spacing=0,
                         
+                        [
 
+                            ft.Text(value="PROYECTO LOGIN_GUI",size=25,weight=ft.FontWeight.BOLD),
+                            ft.Text(value=event_handlers.EVENTS_HANDLERS.text_config(messages_repository.PROJECT_INTRODUCTION),size=18,text_align=ft.TextAlign.JUSTIFY),
+
+                        ]
+                    
                     )
 
                 ),
-                
+
                 ft.Container(
 
-                     content = ft.Column(
+
+                    content=ft.Column(
+
 
                         [
-                            ft.Text(value="INSTRUCCIONES",size=26,color="white",weight=ft.FontWeight.BOLD,font_family="OpenSans"),
-                            ft.Text(value=messages_repository.PROJECT_INSTRUCTIONS,size=16,color="white"),
-        
-                        ],
 
-                        spacing=0,
+                            ft.Text(value="INSTRUCCIONES",size=25,weight=ft.FontWeight.BOLD),
+                            ft.Text(value=messages_repository.PROJECT_INSTRUCTIONS,size=18,text_align=ft.TextAlign.JUSTIFY),
 
+                        ]
                     )
-
                 )
 
+                
             ],
 
-            spacing = 0
+            spacing=40,
+            height=510,
+            scroll="auto"
+            
+
+        ),
+
+        padding=ft.padding.only(left=10,top=40,right=20),
+        
+        
 
         )
     
+
+    
     def nav_component():
 
-        return ft.Column(
+        return ft.Container(
+
+
+            content=ft.Column(
 
             [
 
-                ft.FilledButton(
+                ft.Button(
                     
-                    content=ft.Text(
-
-                        "Sign User In",color="#0d5c2c"
-
-                        ),
-
-                    bgcolor="white",
-
-                    style=ft.ButtonStyle(
-
-                        shape=ft.RoundedRectangleBorder(5),
-                        side=ft.BorderSide(1,color="#0d5c2c")
-
-
-                            ),
-
-                    width=160,
-                    height=50
-
-                ),
-
-                ft.FilledButton(
+                    text="Sign User In",
+                    width=400,
+                    style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=5),bgcolor="white",side=ft.BorderSide(width=1,color="green"),padding=ft.padding.only(top=20,bottom=20)),
+                    color="green"
                     
-                    content=ft.Text(
+                    ),
 
-                        "Sign Admin in",color="#0d5c2c"
 
-                        ),
+                ft.Button(
 
-                    bgcolor="white",
-
-                    style=ft.ButtonStyle(
-
-                        shape=ft.RoundedRectangleBorder(5),
-                        side=ft.BorderSide(1,color="#0d5c2c")
-
-                            ),
-
-                    width=160,
-                    height=50
-                            
-                ),
-
-                ft.FilledButton(
+                    text="Sign Admin In",
+                    width=400,
+                    style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=5),bgcolor="white",side=ft.BorderSide(width=1,color="green"),padding=ft.padding.only(top=20,bottom=20)),
+                    color="green",
                     
-                    content=ft.Text(
 
-                        "Sign User Up",color="#1f1d9d"
+                    ),
 
-                        ),
+                ft.Button(
 
-                    bgcolor="white",
+                    text="Sign User Up",
+                    width=400,
+                    style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=5),bgcolor="white",side=ft.BorderSide(width=1,color="blue"),padding=ft.padding.only(top=20,bottom=20)),
+                    color="blue"
 
-                    style=ft.ButtonStyle(
-
-                        shape=ft.RoundedRectangleBorder(5),
-                        side=ft.BorderSide(1,color="#1f1d9d")
-
-                            ),
-
-                    width=160,
-                    height=50,
-                            
-                ),
+                    ),
 
                 ft.Container(
 
 
-                    content = ft.FilledButton(
+                    content= ft.Button(
+
+                    text="Quit System",
+                    width=400,
+                    style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=5),bgcolor="white",side=ft.BorderSide(width=1,color="red"),padding=ft.padding.only(top=20,bottom=20)),
+                    color="red"
+
+                    ),
+
+                    margin=ft.margin.only(top=150),
                     
-                    content=ft.Text(
-
-                            "Quit App",color="Red"
-                        ),
-
-                    bgcolor="white",
-
-                    style=ft.ButtonStyle(
-
-                        shape=ft.RoundedRectangleBorder(5),
-                        side=ft.BorderSide(1,color="Red")
-
-
-                            ),
-
-                    width=160,
-                    height=50,
-                    
-                            
-                ),
-
-                margin= ft.margin.only(top=180)
-
                 )
-                
+
             ],
 
-            alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
-            spacing=40,
-            
+            spacing=50,   
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+
+
+        ),
+
+        padding=ft.padding.only(left=10,top=40,right=10)
+
         )
-        
+
     def sign_in_component(self):
-        pass
+        
+        return ft.Text(value="hola mundo")
 
     def sign_up_component(self):
         pass

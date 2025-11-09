@@ -1,4 +1,5 @@
 import flet as ft
+from views import messages_repository
 from components import Login_Components
 
 class MAIN_APP:
@@ -9,21 +10,29 @@ class MAIN_APP:
         # Configuracion basica de ventana principal del sistema:
 
         page.title = "LOGIN_GUI"
-        page.window.width = 1150
-        page.window.height = 730
-
-        page.window.resizable = False
-        page.window.maximizable = False
-
+        
         page.padding = 0
         page.spacing = 0
 
-        page.bgcolor = "#11212d"
+
+        page.window.width = 1200
+        page.window.height = 670
+
+
+        page.window.min_width = 800
+        page.window.min_height = 670
+
+        page.window.max_width = 1200
+        page.window.max_height = 670
+
+        page.expand = False
+        page.bgcolor = "#1b1d1e"
 
         # Componente de ventana principal:
 
-        content_component = Login_Components.COMPONENTS.content_component
-        nav_component = Login_Components.COMPONENTS.nav_component
+        main_component = Login_Components.COMPONENTS.content_component()
+
+
 
 
         page.add(ft.Column(
@@ -31,69 +40,64 @@ class MAIN_APP:
             [
                 ft.Container(
 
-                    bgcolor="#11212d",
-                    padding=ft.padding.only(left=10),
-                    border=ft.Border(
-                    bottom=ft.BorderSide(2, color="white")
-                       
-                    ),
-
                     content = ft.Row(
 
                         [
 
-                            ft.Text(value= "LOGIN_GUI",color="white",size=45),
-                            ft.Image(src= r"SQL/00-Proyectos/Login_GUI/assets/icon.jpg",width=120,height=100)
+                            ft.Text(value="LOGIN_GUI",size=45,weight=ft.FontWeight.BOLD),
+                            ft.Image(src="assets/icon.jpg",width=80,height=80)
 
                         ],
                         
-                        alignment= ft.MainAxisAlignment.SPACE_BETWEEN
-
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                     ),
+
+                    padding=ft.padding.only(left=10,right=10),
+                    border=ft.border.only(bottom=ft.BorderSide(1,"white")),
+                    bgcolor="#11212d"
 
                 ),
 
                 ft.Container(
 
-                    bgcolor="#1B1D1E",
-                    content= ft.Row(
+
+                    content=ft.Row(
+
 
                         [
 
                             ft.Container(
 
-                                bgcolor="gray",
-                                content=content_component(),
+                                content=main_component,
                                 expand=4,
-                                padding=ft.padding.only(left=10) 
-                                
-                                
+                                border=ft.border.only(right=ft.BorderSide(1,"white")),
                             ),
 
 
                             ft.Container(
 
-
-                                content=nav_component(),  
+                                content=Login_Components.COMPONENTS.nav_component(),
                                 expand=1,
-                                alignment=ft.alignment.center_right,
-                                padding=ft.padding.only(right=13,top=20)
+                                
+                                
                             )
+
                         ],
 
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         vertical_alignment=ft.CrossAxisAlignment.START
-                        
-                    ),
 
-                    padding=ft.padding.only(top=20)
-                    
+
+                    )
+
+
+
                 )
+  
             ],
 
             spacing=0
-           
         )
-
         )
 
         
