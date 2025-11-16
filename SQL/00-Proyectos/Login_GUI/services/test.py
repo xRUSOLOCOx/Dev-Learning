@@ -1,46 +1,50 @@
-# import flet as ft
-# import test_2   
+import flet as ft
+import test_2
 
-# def main(page: ft.Page):
-    
+def main(page: ft.Page):
 
-#     def mostrar_hola_mundo(e):
+    def mostrar_hola_mundo(e):
+        nuevo = test_2.componentes.contenedor_1()
+        cambiar_con_animacion(nuevo)
 
-#         contentenedor_1 = test_2.componentes.contenedor_1()
-#         contenedor_principal.content = contentenedor_1
+    def mostrar_hello_world(e):
+        nuevo = test_2.componentes.contenedor_2()
+        cambiar_con_animacion(nuevo)
 
-#         page.update()
-
-#     def mostrar_hello_world(e):
-
-#         contentenedor_2 = test_2.componentes.contenedor_2()
-#         contenedor_principal.content = contentenedor_2
-
-#         page.update()
-
-
-#     # Componentes:
-
-
-#     contenedor_principal = ft.Container(content=ft.Text(value="Hola soy una cadena"))
-
-#     page.add(
+    # ---- FUNCIÓN DE ANIMACIÓN ----
+    def cambiar_con_animacion(nuevo_contenido):
+        # Guardamos el nuevo contenido
+        contenedor_principal.data = nuevo_contenido
         
-#         ft.Column(
+        # Fade-out
+        contenedor_principal.opacity = 0
+        contenedor_principal.update()
 
-#             [
-#                 ft.Container(content = contenedor_principal),
-#                 ft.Button(text="presioname para ver tu hola mundo",on_click=mostrar_hola_mundo),
-#                 ft.Button(text="presioname para ver tu hello world",on_click=mostrar_hello_world)
+    # ---- Cuando termina la animación ----
+    def fin_animacion(e):
+        if contenedor_principal.opacity == 0:
+            # Cambiamos texto aquí (después del fade)
+            contenedor_principal.content = contenedor_principal.data
+            # Fade-in
+            contenedor_principal.opacity = 1
+            contenedor_principal.update()
 
-#             ]
+    # ---- CONTENEDOR PRINCIPAL ----
+    contenedor_principal = ft.Container(
+        content=ft.Text("Hola soy una cadena"),
+        opacity=1,
+        animate_opacity=ft.Animation(400, "ease"),
+        on_animation_end=fin_animacion
+    )
 
-#         )
+    page.add(
+        ft.Column(
+            [
+                contenedor_principal,
+                ft.Button("presioname para ver tu hola mundo", on_click=mostrar_hola_mundo),
+                ft.Button("presioname para ver tu hello world", on_click=mostrar_hello_world),
+            ]
+        )
+    )
 
-#         )
-
-# ft.app(main)
-
-
-# # on_click=mostrar_hola_mundo(contenedor_1)
-# # on_click=mostrar_hello_world(contenedor_2)
+ft.app(main)

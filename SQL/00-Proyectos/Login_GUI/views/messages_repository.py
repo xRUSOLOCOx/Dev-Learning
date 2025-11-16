@@ -20,3 +20,15 @@ PROJECT_INSTRUCTIONS = """La interfaz principal incluye cuatro opciones de naveg
 Haz clic en el botón deseado para continuar.
 
 """
+
+
+WELCOME_USER_SIGNIN = """Por favor ingrese sus credenciales para iniciar sesion.
+
+    - Nombre de usuario: 6-20 caracteres; solo letras, números y guión bajo (_); sin espacios.
+        Ejemplo: usuario_01
+
+    - Contraseña: mínimo 8 caracteres; debe incluir al menos una letra MAYÚSCULA y al menos un dígito.
+        Puede contener símbolos comunes (@ # $ % ^ & + = ! ¿ ? . _ -).
+
+
+"""
